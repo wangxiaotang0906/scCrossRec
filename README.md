@@ -30,9 +30,10 @@ CrossRec/
 │   └── interaction_graph_generator_Multiome.py
 │
 └── interaction_graph_datasets/                 # Output directory for generated graph datasets
-│   ├── ISSAAC/
-│   ├── PBMC/
-│   └── ....
+│   ├── TF_data/                                # TF-binding files
+│   ├── ISSAAC/                                 # Generated graph dataset
+│   ├── PBMC/                                   # Generated graph dataset
+│   └── ....                                    # Generated graph dataset
 │ 
 ├── environment.yml                             # environment file
 ├── model.py                                    # scCrossRec model
@@ -71,9 +72,11 @@ If you use custom datasets, follow our format and use scripts under "CrossRec/in
 Use the corresponding script "CrossRec/interaction_graph_generator/interaction_graph_generator_{dataset}.py" to generate the interaction graph datasets.
 Make sure to modify the `dataset_store_path` inside each script so that it matches your local directory structure.
 Several optional parameters are important:
--   `select_cell_type = False     # Set to True if you want to restrict the dataset to specific cell types.`
--   `selected_cell_type = [".."]`
--   `for_discovery = False # If for_discovery is True, only positive samples are generated. This is commonly used when preparing a single cell type for regulatory discovery using a pretrained model`
+```
+select_cell_type = False       # Set to True if you want to restrict the dataset to specific cell types.
+selected_cell_type = [".."]
+for_discovery = False          # If for_discovery is True, only positive samples are generated. This is commonly used when preparing a single cell type for regulatory discovery using a pretrained model
+```
 
 ### Step3: Training models
 Train scCrossRec using "train.py".
@@ -86,5 +89,6 @@ This script generates cell-level attention matrices and additional regulatory in
 To visualize the results:
 - Use "regulatory_discovery_cell.ipynb" for cell-level regulatory matrices
 - Use "regulatory_discovery_cell_type.ipynb" for cell-type regulatory maps
+
 
 
