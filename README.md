@@ -64,6 +64,7 @@ You can download our preprocessed AnnData (ATAC_AnnData.h5ad, RNA_AnnData.h5ad, 
 
 If you use custom datasets, follow our format and use scripts under "CrossRec/interaction_graph_generator/missing_attribute_generator/" to fill missing attributes. You may need to download the supporting files "hg38.fa" and "gencode.v43.annotation.gtf" from:
 > https://drive.google.com/file/d/1fOG_4zBMV9td7Rjf8IGKQOzqzT6x_IfG/view?usp=drive_link
+> 
 > https://drive.google.com/file/d/1QBI1QqQ-Yz7c1C94UUvyZjfdMMIckedK/view?usp=drive_link
 
 ### Step2: Generate interaction graphs (graph datasets)
@@ -85,4 +86,5 @@ This script generates cell-level attention matrices and additional regulatory in
 To visualize the results:
 - Use "regulatory_discovery_cell.ipynb" for cell-level regulatory matrices
 - Use "regulatory_discovery_cell_type.ipynb" for cell-type regulatory maps
+
 
